@@ -58,7 +58,7 @@ is {distanceinmiles:.2f} miles
 ''')
 
 # Rudimentary at this point, but, felt I wanted to complete the 'challenge' :>
-if int(distanceinmiles) >= 50:
+if int(distanceinmiles) >= 100:
     print('Distance is further than 50 miles')
 else:
     print ('Distance is closer than 50 miles')
