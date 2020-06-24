@@ -1,15 +1,14 @@
-import requests
+# import requests
 import pickle
 from bs4 import BeautifulSoup
-url = 'https://www.doogal.co.uk/UKPhoneCodes.php'
+# url = 'https://www.doogal.co.uk/UKPhoneCodes.php'
 
-html_content = requests.get(url).text
-soup = BeautifulSoup(html_content, 'lxml')
+# html_content = requests.get(url).text
+soup = BeautifulSoup(open('UK_phone_codes.html'), 'lxml')
 # Get the main table on the page
 pcodetable = soup.find('table', attrs={'class': 'phoneCodeTable'})
-pcodetable_data = pcodetable.find_all('tr')
-# Remove the <th> row
-pcodetable_data = pcodetable_data[1:]
+# Get all the rows and ditch the th row.
+pcodetable_data = pcodetable.find_all('tr')[1:]
 
 textdata = []
 # For each row in the table
