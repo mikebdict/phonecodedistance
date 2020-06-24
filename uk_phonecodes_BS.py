@@ -22,8 +22,12 @@ for tr in pcodetable_data:
     del row[2]
     textdata.append(row)
 
-textdata = [[s.replace(' ', '') for s in l] for l in textdata]
+# Remove the whitespace from the code col
+td2 = []
+for r in textdata:
+    r = [r[0].replace(' ', ''),r[1],r[2],r[3]]
+    td2.append(r)
 
 # save the final list as a pickle file
 with open("codes.pickle", "wb") as f:
-    pickle.dump(textdata, f)
+    pickle.dump(td2, f)
