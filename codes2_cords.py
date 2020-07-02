@@ -14,9 +14,9 @@ for x in codes:
 rAClist = sorted(areacodelist, reverse=True)
 
 # Grab the phone codes for testing from user input
-first_number = input('enter first area code ')
+first_number = input('enter first phone number ')
 type(first_number)
-second_number = input('enter the second area code ')
+second_number = input('enter the second phone number ')
 type(second_number)
 
 firstcode = []

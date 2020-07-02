@@ -19,14 +19,10 @@ for tr in pcodetable_data:
     row = [i.text for i in td]
     # ditch the example number column
     del row[2]
+    # remove the spaces between longer codes
+    row[0] = row[0].replace(' ', '')
     textdata.append(row)
-
-# Remove the whitespace from the code col
-td2 = []
-for r in textdata:
-    r = [r[0].replace(' ', ''),r[1],r[2],r[3]]
-    td2.append(r)
 
 # save the final list as a pickle file
 with open("codes.pickle", "wb") as f:
-    pickle.dump(td2, f)
+    pickle.dump(textdata, f)
